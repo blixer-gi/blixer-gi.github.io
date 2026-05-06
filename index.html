@@ -752,7 +752,7 @@
 
         <div class="map-card reveal">
           <div class="map-thumb" style="aspect-ratio: 21/9;">
-            <img src="synapse_addition.png" alt="Project: Synapse | Map Addition" style="width:100%;height:100%;object-fit:cover;" />
+            <img src="synapse_addition_preview.png" data-full="synapse_addition_full.png" alt="Project: Synapse | Map Addition" style="width:100%;height:100%;object-fit:cover;" />
           </div>
           <div class="map-card-body">
             <h3 class="map-name">Project: Synapse | Map Addition</h3>
@@ -786,7 +786,7 @@
 
     document.querySelectorAll('.map-thumb img').forEach(img => {
       img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
+        lightboxImg.src = img.dataset.full || img.src;
         lightboxImg.alt = img.alt;
         lightboxCaption.textContent = img.alt;
         lightbox.classList.add('open');
